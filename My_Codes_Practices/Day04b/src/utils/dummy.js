@@ -1,0 +1,3 @@
+const arr = [{cloth:"T-shirt", discount:"30-40% off"},{cloth:"jeans", discount:"40-50% off"},{cloth:"Shirt", discount:"50-60% off"},{cloth:"hoofies", discount:"60-70% off"},{cloth:"jacket", discount:"20-50% off"},{cloth:"watch", discount:"50-60% off"},{cloth:"Shoes", discount:"80-90% off"},{cloth:"lamp", discount:"70-80% off"},{cloth:"Bags", discount:"60-80% off"},{cloth:"Sleepers", discount:"70-90% off"}, {cloth:"lower", discount:"50-60% off"},{cloth:"Towl", discount:"60-70% off"}]
+
+export default arr;
