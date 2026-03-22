@@ -724,7 +724,6 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
 var _header = require("./component/Header");
@@ -735,12 +734,42 @@ var _footer = require("./component/Footer");
 var _footerDefault = parcelHelpers.interopDefault(_footer);
 var _dummy = require("./utils/dummy");
 var _dummyDefault = parcelHelpers.interopDefault(_dummy);
+var _s = $RefreshSig$();
 function App() {
+    _s();
+    let [A, setA] = (0, _react.useState)((0, _dummyDefault.default));
+    function SortArray() {
+        A.sort((a, b)=>a.price - b.price);
+        setA([
+            ...A
+        ]);
+    //console.log(arr);
+    }
+    function priceabove499() {
+        const B = A.filter((value)=>value.price > 499);
+        setA(B);
+    }
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/Myntra.js",
-                lineNumber: 12,
+                lineNumber: 29,
+                columnNumber: 5
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: SortArray,
+                children: "Sort by Price"
+            }, void 0, false, {
+                fileName: "src/Myntra.js",
+                lineNumber: 30,
+                columnNumber: 5
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: priceabove499,
+                children: "PriceAbove 499"
+            }, void 0, false, {
+                fileName: "src/Myntra.js",
+                lineNumber: 31,
                 columnNumber: 5
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -750,32 +779,34 @@ function App() {
                     gap: "10px",
                     flexWrap: "wrap"
                 },
-                children: (0, _dummyDefault.default).map((value, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
+                children: A.map((value, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
                         clothes: value.cloth,
-                        discount: value.discount
+                        discount: value.discount,
+                        price: value.price
                     }, index, false, {
                         fileName: "src/Myntra.js",
-                        lineNumber: 16,
+                        lineNumber: 35,
                         columnNumber: 13
                     }, this))
             }, void 0, false, {
                 fileName: "src/Myntra.js",
-                lineNumber: 13,
+                lineNumber: 32,
                 columnNumber: 5
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                 fileName: "src/Myntra.js",
-                lineNumber: 20,
+                lineNumber: 39,
                 columnNumber: 5
             }, this)
         ]
     }, void 0, true);
 }
+_s(App, "KvbpkcFmdPfExhYzn6pd5LtTqj0=");
 _c = App;
 const root = (0, _clientDefault.default).createRoot(document.getElementById('root'));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "src/Myntra.js",
-    lineNumber: 26,
+    lineNumber: 45,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -786,7 +817,7 @@ $RefreshReg$(_c, "App");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-dom/client":"hrvwu","./component/Header":"3FunF","./component/card":"2JDAW","./component/Footer":"7fPqS","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","./utils/dummy":"ie6fY"}],"dVPUn":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react-dom/client":"hrvwu","./component/Header":"3FunF","./component/card":"2JDAW","./component/Footer":"7fPqS","./utils/dummy":"ie6fY","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react":"jMk1U"}],"dVPUn":[function(require,module,exports,__globalThis) {
 'use strict';
 module.exports = require("ee51401569654d91");
 
@@ -19941,6 +19972,16 @@ function Card(props) {
                         fileName: "src/component/card.js",
                         lineNumber: 8,
                         columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        children: [
+                            "Price: ",
+                            props.price
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/component/card.js",
+                        lineNumber: 9,
+                        columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
@@ -20002,51 +20043,63 @@ parcelHelpers.defineInteropFlag(exports);
 const arr = [
     {
         cloth: "T-shirt",
-        discount: "30-40% off"
+        discount: "30-40% off",
+        price: 200
     },
     {
         cloth: "jeans",
-        discount: "40-50% off"
+        discount: "40-50% off",
+        price: 100
     },
     {
         cloth: "Shirt",
-        discount: "50-60% off"
+        discount: "50-60% off",
+        price: 800
     },
     {
         cloth: "hoofies",
-        discount: "60-70% off"
+        discount: "60-70% off",
+        price: 2000
     },
     {
         cloth: "jacket",
-        discount: "20-50% off"
+        discount: "20-50% off",
+        price: 400
     },
     {
         cloth: "watch",
-        discount: "50-60% off"
+        discount: "50-60% off",
+        price: 300
     },
     {
         cloth: "Shoes",
-        discount: "80-90% off"
+        discount: "80-90% off",
+        price: 1200
     },
     {
         cloth: "lamp",
-        discount: "70-80% off"
+        discount: "70-80% off",
+        price: 600
     },
     {
         cloth: "Bags",
-        discount: "60-80% off"
+        discount: "60-80% off",
+        price: 600
     },
     {
         cloth: "Sleepers",
-        discount: "70-90% off"
+        discount: "70-90% off",
+        price: 1500
     },
     {
         cloth: "lower",
-        discount: "50-60% off"
+        discount: "50-60% off",
+        price: 1400
     },
     {
         cloth: "Towl",
-        discount: "60-70% off"
+        discount: "60-70% off",
+        price: 400
     }
 ];
 exports.default = arr;

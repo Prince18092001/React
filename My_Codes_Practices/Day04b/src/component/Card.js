@@ -6,6 +6,7 @@ function Card(props){
                 <h2>{props.clothes}</h2>
                 <h1>{props.discount}</h1>
                 <h2>Shop Now</h2>
+                <h2>Price: {props.price}</h2>
             </div>
           </div>
     )
